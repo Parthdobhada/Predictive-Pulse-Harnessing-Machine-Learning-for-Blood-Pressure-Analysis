@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Heart Disease Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #6dd5fa, #2980b9);
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        form {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            max-width: 500px;
+            width: 100%;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 8px;
+            outline: none;
+            font-size: 16px;
+        }
+        button {
+            background-color: #27ae60;
+            color: white;
+            padding: 12px;
+            width: 100%;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #2ecc71;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            font-size: 18px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .success {
+            background-color: rgba(46, 204, 113, 0.8);
+        }
+        .danger {
+            background-color: rgba(231, 76, 60, 0.8);
+        }
+    </style>
+</head>
+<body>
+    <h1>Heart Disease Prediction</h1>
+    <form action="/predict" method="post">
+        <input type="number" step="any" name="feature1" placeholder="Feature 1" required>
+        <input type="number" step="any" name="feature2" placeholder="Feature 2" required>
+        <input type="number" step="any" name="feature3" placeholder="Feature 3" required>
+        <input type="number" step="any" name="feature4" placeholder="Feature 4" required>
+        <input type="number" step="any" name="feature5" placeholder="Feature 5" required>
+        <input type="number" step="any" name="feature6" placeholder="Feature 6" required>
+        <input type="number" step="any" name="feature7" placeholder="Feature 7" required>
+        <input type="number" step="any" name="feature8" placeholder="Feature 8" required>
+        <input type="number" step="any" name="feature9" placeholder="Feature 9" required>
+        <input type="number" step="any" name="feature10" placeholder="Feature 10" required>
+        <input type="number" step="any" name="feature11" placeholder="Feature 11" required>
+        <input type="number" step="any" name="feature12" placeholder="Feature 12" required>
+        <input type="number" step="any" name="feature13" placeholder="Feature 13" required>
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if prediction_text %}
+        <div class="result {{ result_class }}">
+            {{ prediction_text }}
+        </div>
+    {% endif %}
+</body>
+</html>
